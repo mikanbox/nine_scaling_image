@@ -11,9 +11,6 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 # Nine Scaling Image
 This package allows user use nine-scaling image widget on Flutter.
 This is useful especially for application with pixel-art design. 
