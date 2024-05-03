@@ -4,23 +4,26 @@ import 'package:nine_scaling_image/nine_scaling_image.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-
-  testWidgets('test the thing', (WidgetTester tester) async {
+  testWidgets('Instantiate widget with 0 pieceSize', (WidgetTester tester) async {
     await tester.pumpWidget(
-      const MediaQuery(
-        data: MediaQueryData(size: Size(200, 300)),
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: SizedBox(),
-          // child: NineScalingImage(assetPath: 'test/sampleimage.png'),
-          // child: NineScalingImage(image: Image.asset('test/sampleimage.png'),pieceSize: (3,3),),
-        ),
-      ),
+      const NineScalingImage(assetPath: 'test/sampleimage.png', pieceSize: Size.zero),
     );
 
-    expect(
-      find.byType(NineScalingImage), findsOneWidget
-    );
+    final NineScalingImage obj = tester.widget(find.byType(NineScalingImage));
+    expect(obj.pieceSize, Size.zero);
+  });
 
-  } );
+  // testWidgets('Instantiate widget with child widget', (WidgetTester tester) async {
+  //   await tester.pumpWidget(
+  //     const NineScalingImage(assetPath: 'test/sampleimage.png', pieceSize: Size(3,3),
+  //     child: SizedBox(),
+  //     ),
+  //   );
+  //
+  //   final NineScalingImage obj = tester.widget(find.byType(NineScalingImage));
+  //   expect(obj.child., const SizedBox());
+  // });
+
+
+
 }

@@ -27,7 +27,7 @@ class NineScalingImage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return CustomPaint(
-                painter: NineScalingPainter(image: snapshot.data!,pieceSize: pieceSize, dstPieceScale: dstPieceScale),
+                painter: _NineScalingPainter(image: snapshot.data!,pieceSize: pieceSize, dstPieceScale: dstPieceScale),
                 child:
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -55,11 +55,11 @@ class NineScalingImage extends StatelessWidget {
 }
 
 
-class NineScalingPainter extends CustomPainter {
+class _NineScalingPainter extends CustomPainter {
   final ui.Image image;
   final Size pieceSize;
   final double dstPieceScale;
-  const NineScalingPainter({required this.image, required this.pieceSize, required this.dstPieceScale});
+  const _NineScalingPainter({required this.image, required this.pieceSize, required this.dstPieceScale});
 
   @override
   void paint(ui.Canvas canvas, ui.Size size) {
