@@ -18,14 +18,21 @@ flutter:
 
 Import package and use NineScalingImage class as folows:
 ```dart
-NineScalingImage img = NineScalingImage(assetPath: 'assets/sampleimage.png',pieceSize: 10,);
+NineScalingImage img = NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: const Size.square(5));
 ```
 
-You can set following 2 parameters:
+You can set following parameters:
 - assetPath (required)
   - a path to image
-- centerColor (not required)
+- pieceSize (required)
+  - a piece size in nine-scaling
+- centerColor (optional)
   - a color which fill the center of widget
-
+- centerColor (optional)
+  - a color which fill the center of widget
+- dstPieceScale (optional)
+  - a piece ratio between scource image and destination widget size
+- child (optional)
+  - child widget in nine-scaling object
 
 

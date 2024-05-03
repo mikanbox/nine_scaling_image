@@ -13,16 +13,16 @@ void main() {
     expect(obj.pieceSize, Size.zero);
   });
 
-  // testWidgets('Instantiate widget with child widget', (WidgetTester tester) async {
-  //   await tester.pumpWidget(
-  //     const NineScalingImage(assetPath: 'test/sampleimage.png', pieceSize: Size(3,3),
-  //     child: SizedBox(),
-  //     ),
-  //   );
-  //
-  //   final NineScalingImage obj = tester.widget(find.byType(NineScalingImage));
-  //   expect(obj.child., const SizedBox());
-  // });
+  testWidgets('Instantiate widget with child widget', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const NineScalingImage(assetPath: 'test/sampleimage.png', pieceSize: Size(3,3),
+      key: Key("SizedBox"),
+      ),
+    );
+
+    final NineScalingImage obj = tester.widget(find.byType(NineScalingImage));
+    expect(obj.key, const Key("SizedBox"));
+  });
 
 
 
