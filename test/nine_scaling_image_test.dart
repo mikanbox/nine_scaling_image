@@ -11,7 +11,9 @@ void main() {
         data: MediaQueryData(size: Size(200, 300)),
         child: Directionality(
           textDirection: TextDirection.ltr,
-          child: NineScalingImage(assetPath: 'test/sampleimage.png'),
+          child: SizedBox(),
+          // child: NineScalingImage(assetPath: 'test/sampleimage.png'),
+          // child: NineScalingImage(image: Image.asset('test/sampleimage.png'),pieceSize: (3,3),),
         ),
       ),
     );
