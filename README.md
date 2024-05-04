@@ -28,8 +28,6 @@ You can set following parameters:
   - a piece size in nine-scaling
 - centerColor (optional)
   - a color which fill the center of widget
-- centerColor (optional)
-  - a color which fill the center of widget
 - dstPieceScale (optional)
   - a piece ratio between scource image and destination widget size
 - child (optional)

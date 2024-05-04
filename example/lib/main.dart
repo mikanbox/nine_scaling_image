@@ -33,61 +33,150 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text('Flutter Plugin Example'),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Container(
-                width: 200,
-                height: 200,
-                color: Colors.orangeAccent,
-                child: const NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: Size.square(5),),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.orangeAccent,
-                child: NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: const Size.square(5),
-                child: Container(color: Colors.red,width: 30,height: 30,),
-                  ),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.orangeAccent,
-                child: NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: const Size.square(5),
-                  dstPieceScale: 4.0,
-                  child: Container(color: Colors.red,width: 30,height: 30,),
-                ),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.orangeAccent,
-                child: const NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: Size.square(5),
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+            child: Row(
+                children: [
+                  Column(
+                    children: [
+                      const Text("Source Image \n 4x Scaled"),
+                      SizedBox(
+                        width: 120,
+                        height: 120,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Image.asset('assets/sampleimage.png',fit: BoxFit.contain,
+                              isAntiAlias: false,
+                              filterQuality: FilterQuality.none,),
+                            const Align(
+                              alignment: Alignment(-0.8, -0.8),
+                              child: Text("piece 4x4", style: TextStyle(color: Colors.red),),
+                            ),
+                            Align(
+                              alignment: const Alignment(-1.0, -1.0),
+                              child: Container(
+                                width: 16,
+                                height: 16,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.red),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const Alignment(1.0, -1.0),
+                              child: Container(
+                                width: 16,
+                                height: 16,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.red),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const Alignment(1.0, 1.0),
+                              child: Container(
+                                width: 16,
+                                height: 16,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.red),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const Alignment(-1.0, 1.0),
+                              child: Container(
+                                width: 16,
+                                height: 16,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.red),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
 
-                  dstPieceScale: 4.0,
-                ),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.orangeAccent,
-                child: NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: const Size.square(5),
-                  dstPieceScale: 4.0,
-                  child: Image.asset('assets/sampleimage.png'),
-                ),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.orangeAccent,
-                child: const NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: Size.square(5),
-                  dstPieceScale: 4.0,
-                  child: Text("frame"),
-                ),
-              ),
-          ],
-        )
+                      )
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Text("Nine Scaling Image \n (dstPieceScale: 1)"),
+                      SizedBox(
+                        width: 120,
+                        height: 120,
+                        child: NineScalingImage(assetPath: 'assets/sampleimage.png', pieceSize: Size.square(5),)
+                      )
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Text("Nine Scaling Image \n (dstPieceScale: 4)"),
+                      SizedBox(
+                          width: 120,
+                          height: 120,
+                          child: NineScalingImage(assetPath: 'assets/sampleimage.png',
+                            pieceSize: Size.square(5), dstPieceScale: 4,)
+                      )
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Text("Nine Scaling Image \n (dstPieceScale: 8)"),
+                      SizedBox(
+                          width: 120,
+                          height: 120,
+                          child: NineScalingImage(assetPath: 'assets/sampleimage.png',
+                            pieceSize: Size.square(5), dstPieceScale: 8,)
+                      )
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Text("Nine Scaling Image \n with child text wiedget"),
+                      SizedBox(
+                          width: 120,
+                          height: 120,
+                          child: NineScalingImage(assetPath: 'assets/sampleimage.png',
+                            pieceSize: Size.square(5), child: Text("child text"),)
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      const Text("Nine Scaling Image \n with child Container wiedget"),
+                      SizedBox(
+                          width: 120,
+                          height: 120,
+                          child: NineScalingImage(assetPath: 'assets/sampleimage.png',
+                            pieceSize: Size.square(5), child: Container(
+                              color: Colors.red,
+                            ),)
+                      )
+                    ],
+                  ),
+                  const Column(
+                    children: [
+                      Text("Nine Scaling Image \n with centerColor"),
+                      SizedBox(
+                          width: 120,
+                          height: 120,
+                          child: NineScalingImage(assetPath: 'assets/sampleimage.png',
+                            pieceSize: Size.square(5),
+                              centerColor: Colors.red,
+                          )
+                      )
+                    ],
+                  )
+
+                ]
+            )
+
+
+
+
+
+
         )
     );
   }

@@ -27,7 +27,7 @@ class NineScalingImage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return CustomPaint(
-                painter: _NineScalingPainter(image: snapshot.data!,pieceSize: pieceSize, dstPieceScale: dstPieceScale),
+                painter: _NineScalingPainter(image: snapshot.data!,pieceSize: pieceSize, dstPieceScale: dstPieceScale, centerColor: centerColor),
                 child:
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -59,7 +59,8 @@ class _NineScalingPainter extends CustomPainter {
   final ui.Image image;
   final Size pieceSize;
   final double dstPieceScale;
-  const _NineScalingPainter({required this.image, required this.pieceSize, required this.dstPieceScale});
+  final Color centerColor;
+  const _NineScalingPainter({required this.image, required this.pieceSize, required this.dstPieceScale, required this.centerColor});
 
   @override
   void paint(ui.Canvas canvas, ui.Size size) {
@@ -82,8 +83,11 @@ class _NineScalingPainter extends CustomPainter {
         // scr の rect を dst の rect に拡大
         final srcRect = Rect.fromLTRB( srcWidth[x], srcHeight[y], srcWidth[x + 1], srcHeight[y + 1]);
         final Rect dstRect = Rect.fromLTRB( dstWidth[x], dstHeight[y] , dstWidth[x + 1], dstHeight[y + 1]);
+
         if (x == 1 && y == 1) {
+          paint.color = centerColor;
           canvas.drawRect(dstRect, paint);
+          paint.color = Colors.white;
           continue;
         }
         canvas.drawImageRect(image, srcRect, dstRect, paint);
