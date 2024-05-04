@@ -1,6 +1,6 @@
 name: nine_scaling_image
 description: An extended Image widget with nine-scaling
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/mikanbox/nine_scaling_image
 
 environment:
