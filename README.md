@@ -2,6 +2,10 @@
 This package allows user use nine-scaling image widget on Flutter.
 This is useful especially for application with pixel-art design. 
 
+## Images
+![Widget samples](https://github.com/mikanbox/nine_scaling_image/blob/main/resources/widget_samples.png?raw=true) 
+
+
 ## Getting Started
 Add `nine_scaling_image` to your pubspec.yaml:
 ```yaml
