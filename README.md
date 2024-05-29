@@ -1,5 +1,5 @@
-# Nine Scaling Image
-This package allows user use nine-scaling image widget on Flutter.
+# Nine-Slice Scaling Image
+This package allows user use nine-slice scaling image widget on Flutter.
 This is useful especially for application with pixel-art design. 
 
 ## Images
@@ -29,12 +29,12 @@ You can set following parameters:
 - assetPath (required)
   - a path to image
 - pieceSize (required)
-  - a piece size in nine-scaling
+  - a piece size in nine-slicing
 - centerColor (optional)
   - a color which fill the center of widget
 - dstPieceScale (optional)
   - a piece ratio between scource image and destination widget size
 - child (optional)
-  - child widget in nine-scaling object
+  - child widget in nine-slicing object
 
 
